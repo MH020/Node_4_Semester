@@ -32,5 +32,12 @@ app.get("/bag/:item1/:item2", (req, res) => { // ingen body, datatype på liking
     res.send({response: `u like waterfalls this much: ${req.params.likingScore}`})
 })
 
+////////////////////////////////////
+// task: create a GET /urls route 
+app.get("/urls", (req, res) => {
+    res.send({ name: "url"  })
+})
+////////////////////////////////////
+
 // skal være i bunden af siden 
 app.listen(8080) // 8080 fordi det er vores lokale port(http developer port) og vi kender den fra tomcat
