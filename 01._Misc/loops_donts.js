@@ -1,0 +1,2 @@
+// noter fra anders 
+
