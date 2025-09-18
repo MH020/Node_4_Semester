@@ -32,5 +32,14 @@ app.get("/greekgods/:id", (req, res) => {
 
 // design resten af API'et - udfordringen er hvordan man vil håndtere Id
 
+
+//task: app.listen can be given a callback function in the second argument. console.log something in it 
 // skal være i bunden af siden 
-app.listen(8080) // 8080 fordi det er vores lokale port(http developer port) og vi kender den fra tomcat
+const PORT = 8080 //
+app.listen(8080, (error) => { 
+    if (error) {
+        console.log("error starting the server", error)
+        return 
+    }
+    console.log("something") 
+})

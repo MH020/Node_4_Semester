@@ -2,4 +2,5 @@
 HTTP method         endpoint
 GET                 /greekgods
 GET                 /greekgods/:id
-
+POST                /greekgods
+PUT                 /
