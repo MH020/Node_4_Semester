@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 3. link to a stylesheet-->
+    <link rel="stylesheet" href="./index.css"
+
+    <title>Time Travel</title>
+
+    <!-- 2. style tag css  -->
+    <style>
+        /* h3 {
+        color: green
+        } */
+    body {
+        background-color: beige
+    }
+    .info{
+        color: green
+    }
+    #visit {
+        color: blue;
+    }
+    </style>
+
+</head>
+<body>
+
+    <!-- 1. inline css /not a good way -->
+    <h1 style="color: green">Welcome to the Time Machine </h1>
+
+    <h3 class="info">info</h3>
+
+    <p> visitors count </p>
+    <h2 id="visit"></h2>
+
+    <script>
+        fetch("/visitorscount")
+        .then((response) => response.json())
+        .then((result) => {
+            const visitorsCounterH2 =document.getElementById("visit")
+            visitorsCounterH2.innerText = result.data
+            console.log(result.data)
+        })
+    </script>
+
+</body>
+</html>
