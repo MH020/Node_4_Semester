@@ -9,12 +9,27 @@ app.use(express.static("public"));
 
 // ========================= PAGES =====================================
 
+// import fs from "fs"
+
+// const frontpage = fs.readFileSync("./public/pages/frontend/index.html").toString() // læser filen synkront, altså går ikke viedere til næste linjer før den er færdig her. placeres udenfor metoden hvor den skal bruges. 
+// //console.log(frontpage) // returns a buffer, therefore we add .toString above, to get something we can actually read instead 
+
+// const matchesPage = fs.readFileSync("./public/pages/matches/matches.html").toString()
+
+// const header = fs.readFileSync("./public/components/header/header.html").toString()
+// const footer = fs.readFileSync("./public/components/footer/footer.html").toString()
+
+// less loading time. server side rendering MEANS NO CORS ERRORS
+
+import { frontpagePage, matchesPage } from './util/pagesUtil.js';
+
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve('public/pages/frontend/index.html'));
+    //res.sendFile(path.resolve('public/pages/frontend/index.html'))
+    res.send(frontpage)
 });
 
 app.get("/matches", (req, res) => {
-    res.sendFile(path.resolve('public/pages/matches/matches.html'));
+    res.send(matchesPage)
 });
 
 // ========================= API =======================================
