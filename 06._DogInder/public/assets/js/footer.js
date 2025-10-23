@@ -1,3 +1,3 @@
-const copyrightYearSpan = document.getElementById("copyright-year");
+const copyrightYearSpan = document.getElementById('copyright-year')
 
-copyrightYearSpan.innerText = new Date().getFullYear();
+copyrightYearSpan.innerText = new Date().getFullYear()
